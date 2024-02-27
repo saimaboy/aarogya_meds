@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sadvenuk/screens/wrapper.dart';
+import 'package:aarogya_meds/screens/wrapper.dart';
 
 void main() {
   runApp(const MyApp());
