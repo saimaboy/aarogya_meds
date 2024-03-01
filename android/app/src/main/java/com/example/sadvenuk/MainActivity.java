@@ -1,4 +1,4 @@
-package com.example.sadvenuk;
+package com.example.aarogya_meds;
 
 import io.flutter.embedding.android.FlutterActivity;
 
