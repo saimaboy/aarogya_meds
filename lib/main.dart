@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sadvenuk/screens/log_in_page.dart';
 import 'package:sadvenuk/screens/wrapper.dart';
 
 void main() {
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SAD Venuk',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Wrapper(),
+      home: const LogInScreen(),
     );
   }
 }
