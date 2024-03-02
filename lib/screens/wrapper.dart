@@ -1,7 +1,6 @@
 //main screen
 import 'package:aarogya_meds/screens/History/history_main.dart';
-import 'package:aarogya_meds/screens/Home/home_main.dart';
-import 'package:aarogya_meds/widget/appbar_back.dart';
+import 'package:aarogya_meds/screens/Home/home_main_old.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatefulWidget {
@@ -15,7 +14,7 @@ class _WrapperState extends State<Wrapper> {
   int index = 0;
 
   final screens = [
-    const HomeMain(),
+    const HomeMainOld(),
     const Center(child: Text('data2')),
     const HistoryMain(),
     const Center(child: Text('data4')),

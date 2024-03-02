@@ -1,6 +1,6 @@
-import 'package:aarogya_meds/screens/log_in_page.dart';
+import 'package:aarogya_meds/screens/Home/home_main.dart';
+import 'package:aarogya_meds/screens/Home/home_main_old.dart';
 import 'package:flutter/material.dart';
-import 'package:aarogya_meds/screens/wrapper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LogInScreen(),
+      home: const HomeMain(),
     );
   }
 }
