@@ -1,3 +1,4 @@
+import 'package:aarogya_meds/screens/log_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:aarogya_meds/screens/wrapper.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Wrapper(),
+      home: const LogInScreen(),
     );
   }
 }
