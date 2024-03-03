@@ -57,13 +57,18 @@ class _HomeMainState extends State<HomeMain> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: AppColors.white,
-                          hintText: 'Search',
+                          hintText: 'Search by drug or pharmacy',
+                          hintStyle: const TextStyle(color: Colors.black38),
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 15,
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.0),
                             borderSide: BorderSide.none,
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.search),
                           ),
                         ),
                       ),

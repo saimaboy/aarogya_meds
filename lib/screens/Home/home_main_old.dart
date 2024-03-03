@@ -1,8 +1,6 @@
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbar_main.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeMainOld extends StatefulWidget {
   const HomeMainOld({super.key});
@@ -28,9 +26,9 @@ class _HomeMainOldState extends State<HomeMainOld> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, bottom: 20),
-            child: const Align(
+          const Padding(
+            padding: EdgeInsets.only(left: 15, bottom: 20),
+            child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Find Medical Facility',
