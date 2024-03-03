@@ -1,5 +1,4 @@
 import 'package:aarogya_meds/screens/Home/home_main.dart';
-import 'package:aarogya_meds/screens/Home/home_main_old.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SAD Venuk',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
