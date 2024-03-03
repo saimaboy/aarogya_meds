@@ -1,7 +1,5 @@
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});
@@ -11,6 +9,7 @@ class HomeMain extends StatefulWidget {
 }
 
 class _HomeMainState extends State<HomeMain> {
+  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,56 +17,55 @@ class _HomeMainState extends State<HomeMain> {
         children: [
           Column(
             children: [
-              Expanded(
-                flex: 3,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(30),
-                    ),
+              Container(
+                decoration: const BoxDecoration(
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.circular(30),
                   ),
-                  width: double.infinity,
-                  child: const Padding(
-                    padding: appPagePadding,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 50),
-                        Text(
-                          'Good Morning Saantha',
-                          style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.white),
+                ),
+                width: double.infinity,
+                height: 330,
+                child: Padding(
+                  padding: appPagePadding,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 50),
+                      const Text(
+                        'Good Morning Saantha',
+                        style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.white),
+                      ),
+                      const Text(
+                        'What do you want to do today?',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: AppColors.white,
                         ),
-                        Text(
-                          'What do you want to do today?',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(height: 30),
+                      TextFormField(
+                        controller: searchController,
+                      )
+                    ],
                   ),
                 ),
               ),
-              const Expanded(
-                flex: 5,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Good Morning Saantha',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w500,
-                      ),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Good Morning Saantha',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
                     ),
-                    Text('What do you want to do today?'),
-                  ],
-                ),
+                  ),
+                  Text('What do you want to do today?'),
+                ],
               )
             ],
           ),
@@ -78,21 +76,61 @@ class _HomeMainState extends State<HomeMain> {
             child: Padding(
               padding: appPagePadding,
               child: Container(
-                height: 160,
+                height: 170,
                 decoration: BoxDecoration(
                     color: AppColors.primarylite,
                     borderRadius: BorderRadius.circular(8)),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
-                      children: [
-                        Text('data'),
-                        Text('data'),
-                        Text('data'),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 15),
+                      child: SizedBox(
+                        width: 150,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Get latest drug news',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Text(
+                                'This widget is the root of your application.',
+                                style: TextStyle(
+                                    fontSize: 12, color: AppColors.textprimary),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                              width: 110,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: AppColors.primary,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: appBorderRadius,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: const Text(
+                                  'Learn More',
+                                  style: TextStyle(
+                                    color: AppColors.white,
+                                    fontSize: 11,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
-                    Image(
-                        image: AssetImage('../../images/home-medical-drug.png'))
+                    Image.asset('lib/images/home-medical-drug.png')
                   ],
                 ),
               ),
