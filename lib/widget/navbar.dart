@@ -31,8 +31,8 @@ class CustomIcon extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Container(
-              width: 40,
-              height: 40,
+              width: 35,
+              height: 35,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: circleColor,
@@ -42,8 +42,8 @@ class CustomIcon extends StatelessWidget {
               colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
               child: Image.asset(
                 imagePath,
-                width: 25,
-                height: 25,
+                width: 23,
+                height: 23,
               ),
             ),
           ],
