@@ -67,6 +67,7 @@ class _NavBarState extends State<NavBar> {
     const HomeMain(),
     const SearchPage(),
     const PillPage(),
+    const PillPage(),
   ];
 
   void onItemTap(int index) {
@@ -87,7 +88,7 @@ class _NavBarState extends State<NavBar> {
           items: [
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/icons/Calendar.png',
+                imagePath: 'lib/assets/icons/Calendar.png',
                 isSelected: _selectedIndex == 0,
                 onTap: () => onItemTap(0),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -96,7 +97,7 @@ class _NavBarState extends State<NavBar> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/icons/Search.png',
+                imagePath: 'lib/assets/icons/Search.png',
                 isSelected: _selectedIndex == 1,
                 onTap: () => onItemTap(1),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -105,7 +106,7 @@ class _NavBarState extends State<NavBar> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/icons/Pill.png',
+                imagePath: 'lib/assets/icons/Pill.png',
                 isSelected: _selectedIndex == 2,
                 onTap: () => onItemTap(2),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -114,7 +115,7 @@ class _NavBarState extends State<NavBar> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/icons/Menu.png',
+                imagePath: 'lib/assets/icons/Menu.png',
                 isSelected: _selectedIndex == 3,
                 onTap: () => onItemTap(3),
                 padding: const EdgeInsets.only(top: 7.0),

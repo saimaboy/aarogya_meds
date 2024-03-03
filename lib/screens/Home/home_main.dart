@@ -152,7 +152,7 @@ class _HomeMainState extends State<HomeMain> {
                         ),
                       ),
                     ),
-                    Image.asset('lib/images/home-medical-drug.png')
+                    Image.asset('lib/assets/home-medical-drug.png')
                   ],
                 ),
               ),
