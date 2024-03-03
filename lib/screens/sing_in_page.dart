@@ -1,10 +1,10 @@
-import 'package:aarogya_meds/screens/sing_in_page.dart';
+import 'package:aarogya_meds/screens/log_in_page.dart';
 import 'package:aarogya_meds/widget/buttons/button.dart';
 import 'package:aarogya_meds/widget/textfield_without_hint.dart';
 import 'package:flutter/material.dart';
 
-class LogInScreen extends StatelessWidget {
-  const LogInScreen({super.key});
+class SignInPage extends StatelessWidget {
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LogInScreen extends StatelessWidget {
                 padding: EdgeInsets.only(top: size.width * 0.1),
                 child: Center(
                   child: Text(
-                    "Log In",
+                    "Sign In",
                     style: TextStyle(
                         fontSize: size.width * 0.07,
                         fontWeight: FontWeight.bold),
@@ -53,18 +53,21 @@ class LogInScreen extends StatelessWidget {
                 TextFieldWithoutHintText(
                   obsecureText: true,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.6),
-                  child: const Text("Forget password?",
-                      style: TextStyle(decoration: TextDecoration.underline)),
-                )
+                Text("Confirm Password",
+                    style: TextStyle(
+                      fontSize: size.width * 0.035,
+                      fontWeight: FontWeight.w500,
+                    )),
+                TextFieldWithoutHintText(
+                  obsecureText: true,
+                ),
               ],
             ),
             Padding(
               padding: EdgeInsets.only(top: size.width * 0.13),
               child: ButtonPrimary(
                 function: () {},
-                buttonText: "Continue",
+                buttonText: "Register",
                 color: Colors.orange,
               ),
             ),
@@ -121,11 +124,11 @@ class LogInScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Are you new?",
+                          "Already has an account?",
                         ),
                         GestureDetector(
                           child: const Text(
-                            "Create an Account",
+                            "Log In",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Colors.blue,
@@ -135,7 +138,7 @@ class LogInScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SignInPage(),
+                                builder: (context) => const LogInScreen(),
                               ),
                             );
                           },
