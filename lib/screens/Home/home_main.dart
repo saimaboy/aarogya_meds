@@ -1,5 +1,8 @@
+import 'package:aarogya_meds/screens/Home/home_card.dart';
 import 'package:aarogya_meds/utils/common.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});
@@ -16,6 +19,7 @@ class _HomeMainState extends State<HomeMain> {
       body: Stack(
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 decoration: const BoxDecoration(
@@ -76,19 +80,41 @@ class _HomeMainState extends State<HomeMain> {
                   ),
                 ),
               ),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Good Morning Saantha',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
+              const SizedBox(height: 80),
+              const Padding(
+                padding: appPagePadding,
+                child: Column(
+                  children: [
+                    Text(
+                      'Daily Insights',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ),
-                  Text('What do you want to do today?'),
-                ],
-              )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: appPagePadding,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HomeCard(
+                      title: 'Daily Plan',
+                      onTap: () {},
+                    ),
+                    HomeCard(
+                      title: 'Daily Plan',
+                      onTap: () {},
+                    ),
+                    HomeCard(
+                      title: 'Daily Plan',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
           Positioned(
