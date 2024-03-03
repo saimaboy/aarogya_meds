@@ -25,7 +25,7 @@ class _HomeMainState extends State<HomeMain> {
                   ),
                 ),
                 width: double.infinity,
-                height: 330,
+                height: 310,
                 child: Padding(
                   padding: appPagePadding,
                   child: Column(
@@ -35,9 +35,10 @@ class _HomeMainState extends State<HomeMain> {
                       const Text(
                         'Good Morning Saantha',
                         style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.white),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.white,
+                        ),
                       ),
                       const Text(
                         'What do you want to do today?',
@@ -46,10 +47,26 @@ class _HomeMainState extends State<HomeMain> {
                           color: AppColors.white,
                         ),
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 25),
                       TextFormField(
                         controller: searchController,
-                      )
+                        readOnly: false,
+                        onTap: () {},
+                        style: const TextStyle(fontSize: 14),
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: AppColors.white,
+                          hintText: 'Search',
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -70,7 +87,7 @@ class _HomeMainState extends State<HomeMain> {
             ],
           ),
           Positioned(
-            top: 220,
+            top: 200,
             left: 0,
             right: 0,
             child: Padding(

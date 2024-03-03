@@ -13,6 +13,7 @@ class AppColors {
   static const Color primary = Color.fromARGB(255, 10, 76, 166);
   static const Color textprimary = Color.fromARGB(255, 53, 53, 53);
   static const Color primarylite = Color.fromARGB(255, 219, 231, 243);
+  static const Color bgcolor = Color.fromARGB(255, 244, 244, 244);
   // static const Color secondory = Color(0xffAA66CC);
   // static const Color success = Color(0xff10DC60);
   // static const Color info = Color(0xff33B5E5);
