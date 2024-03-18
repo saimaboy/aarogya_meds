@@ -36,8 +36,9 @@ class CardMed extends StatelessWidget {
                         child: Text(
                           "Lisinopril",
                           style: TextStyle(
-                              fontSize: size.width * 0.05,
-                              fontWeight: FontWeight.bold),
+                            fontSize: size.width * 0.05,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       const Expanded(

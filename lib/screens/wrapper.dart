@@ -1,4 +1,5 @@
 import 'package:aarogya_meds/screens/Home/home_main.dart';
+import 'package:aarogya_meds/screens/my_meds_page.dart';
 import 'package:aarogya_meds/screens/pill.dart';
 import 'package:aarogya_meds/screens/search.dart';
 import 'package:aarogya_meds/utils/common.dart';
@@ -18,7 +19,7 @@ class _WrapperState extends State<Wrapper> {
   final List<Widget> _widgetOptions = <Widget>[
     const HomeMain(),
     const SearchPage(),
-    const PillPage(),
+    const MyMedsPage(),
     const PillPage(),
   ];
 

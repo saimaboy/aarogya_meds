@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/widget/card.dart';
+import 'package:aarogya_meds/widget/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class MyMedsPage extends StatelessWidget {
