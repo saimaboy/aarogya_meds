@@ -1,4 +1,5 @@
 import 'package:aarogya_meds/screens/Home/home_main.dart';
+import 'package:aarogya_meds/screens/Profile/profile_main.dart';
 import 'package:aarogya_meds/screens/pill.dart';
 import 'package:aarogya_meds/screens/search.dart';
 import 'package:aarogya_meds/utils/common.dart';
@@ -19,7 +20,7 @@ class _WrapperState extends State<Wrapper> {
     const HomeMain(),
     const SearchPage(),
     const PillPage(),
-    const PillPage(),
+    const ProfilePage(),
   ];
 
   void onItemTap(int index) {
