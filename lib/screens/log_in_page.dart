@@ -135,7 +135,7 @@ class LogInScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SignInPage(),
+                                builder: (context) => const SignInPage(),
                               ),
                             );
                           },

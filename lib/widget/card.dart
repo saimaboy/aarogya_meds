@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CardMed extends StatelessWidget {
   const CardMed({super.key});
@@ -24,7 +23,7 @@ class CardMed extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: size.width * 0.01),
-                  child: Text(
+                  child: const Text(
                     "08.00 AM",
                   ),
                 ),
@@ -41,7 +40,7 @@ class CardMed extends StatelessWidget {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Expanded(
+                      const Expanded(
                         flex: 1,
                         child: Text(
                           "ACE inhibitor",
@@ -56,7 +55,7 @@ class CardMed extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: size.width * 0.01),
-                  child: Text(
+                  child: const Text(
                     "2 Pill",
                   ),
                 ),

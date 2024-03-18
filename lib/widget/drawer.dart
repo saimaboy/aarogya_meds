@@ -37,7 +37,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('title')),
+      appBar: AppBar(title: const Text('title')),
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),

@@ -1,10 +1,5 @@
-import 'package:aarogya_meds/screens/Home/home_main.dart';
-import 'package:aarogya_meds/screens/log_in_page.dart';
-import 'package:aarogya_meds/screens/my_meds_page.dart';
-import 'package:aarogya_meds/screens/sing_in_page.dart';
+import 'package:aarogya_meds/screens/wrapper.dart';
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/card.dart';
-import 'package:aarogya_meds/widget/navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const MyMedsPage(),
+      home: const Wrapper(),
     );
   }
 }
