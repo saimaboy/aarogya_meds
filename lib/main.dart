@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/screens/wrapper.dart';
+import 'package:aarogya_meds/screens/Pharmarcy/pharmacy_list.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const Wrapper(),
+      home: const PharmacyList(),
     );
   }
 }
