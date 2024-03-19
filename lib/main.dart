@@ -1,4 +1,6 @@
+import 'package:aarogya_meds/screens/Auth/singin.dart';
 import 'package:aarogya_meds/screens/Pharmarcy/pharmacy_list.dart';
+import 'package:aarogya_meds/screens/Auth/siginup.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const PharmacyList(),
+      home: const AppSignin(),
     );
   }
 }

@@ -6,8 +6,11 @@ const EdgeInsets appPagePadding = EdgeInsets.only(left: 20, right: 20, top: 20);
 const TextStyle appTextHeader = TextStyle(
     fontSize: 26, fontWeight: FontWeight.bold, color: Color(0xff222428));
 const TextStyle appTextSubHeader =
-    TextStyle(fontSize: 15, color: Color.fromARGB(255, 102, 102, 102));
+    TextStyle(fontSize: 15, color: AppColors.textprimary);
 BorderRadius appBorderRadius = BorderRadius.circular(5);
+const TextStyle appTextHeader1 = TextStyle(
+    fontSize: 26, fontWeight: FontWeight.bold, color: AppColors.primary);
+const EdgeInsets appFieldPadding = EdgeInsets.only(bottom: 15);
 
 class AppColors {
   static const Color primary = Color.fromARGB(255, 10, 76, 166);
