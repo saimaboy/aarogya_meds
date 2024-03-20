@@ -1,5 +1,5 @@
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/menu_notification_appbar.dart';
+import 'package:aarogya_meds/widget/appbars/menu_edit_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const MenuNotification(title: "Profile"),
+        appBar: const MenuEdit(title: "Profile"),
         body: Container(
           padding: const EdgeInsets.all(16.0),
           child:
