@@ -1,7 +1,5 @@
 import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/menu_edit_appbar.dart';
-import 'package:aarogya_meds/widget/buttons/button.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
