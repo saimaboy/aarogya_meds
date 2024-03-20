@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/screens/patients/Auth/signup.dart';
+import 'package:aarogya_meds/screens/pharmacists/Auth/pha_signup.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
@@ -9,10 +9,10 @@ class PharmacistsSignin extends StatefulWidget {
   const PharmacistsSignin({super.key});
 
   @override
-  State<PharmacistsSignin> createState() => _AppSigninState();
+  State<PharmacistsSignin> createState() => _PharmacistsSigninState();
 }
 
-class _AppSigninState extends State<PharmacistsSignin> {
+class _PharmacistsSigninState extends State<PharmacistsSignin> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
   bool checked = false;
@@ -28,7 +28,7 @@ class _AppSigninState extends State<PharmacistsSignin> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 70),
-              const Text("Hi, Welcome Back!", style: appTextHeader1),
+              const Text("Pharmacists Login", style: appTextHeader1),
               const Text(
                 "Hello again, you've been missed!",
                 style: appTextSubHeader,
@@ -114,7 +114,7 @@ class _AppSigninState extends State<PharmacistsSignin> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const AppSignUp(),
+                            builder: (context) => const PharmacistsSignUp(),
                           ),
                         );
                       },
