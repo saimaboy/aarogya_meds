@@ -1,18 +1,18 @@
-import 'package:aarogya_meds/screens/patients/Auth/siginup.dart';
+import 'package:aarogya_meds/screens/patients/Auth/signup.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
-class AppSignin extends StatefulWidget {
-  const AppSignin({super.key});
+class PharmacistsSignin extends StatefulWidget {
+  const PharmacistsSignin({super.key});
 
   @override
-  State<AppSignin> createState() => _AppSigninState();
+  State<PharmacistsSignin> createState() => _AppSigninState();
 }
 
-class _AppSigninState extends State<AppSignin> {
+class _AppSigninState extends State<PharmacistsSignin> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
   bool checked = false;
