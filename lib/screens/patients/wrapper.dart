@@ -1,8 +1,8 @@
-import 'package:aarogya_meds/screens/Home/home_main.dart';
+import 'package:aarogya_meds/screens/patients/Home/home_main.dart';
 
-import 'package:aarogya_meds/screens/Profile/profile_main.dart';
-import 'package:aarogya_meds/screens/pill.dart';
-import 'package:aarogya_meds/screens/search.dart';
+import 'package:aarogya_meds/screens/patients/Profile/profile_main.dart';
+import 'package:aarogya_meds/screens/patients/pill.dart';
+import 'package:aarogya_meds/screens/patients/search.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/navbar_icon.dart';
 import 'package:flutter/material.dart';

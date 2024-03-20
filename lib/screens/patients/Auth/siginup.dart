@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/screens/Auth/singin.dart';
+import 'package:aarogya_meds/screens/patients/Auth/singin.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
