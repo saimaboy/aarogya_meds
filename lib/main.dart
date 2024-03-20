@@ -1,8 +1,9 @@
-import 'package:aarogya_meds/screens/Reminder/add_remider.dart';
-import 'package:aarogya_meds/screens/wrapper.dart';
-import 'package:aarogya_meds/screens/Auth/singin.dart';
-import 'package:aarogya_meds/screens/Pharmarcy/pharmacy_list.dart';
-import 'package:aarogya_meds/screens/Auth/siginup.dart';
+import 'package:aarogya_meds/screens/patients/Profile/profile_main.dart';
+import 'package:aarogya_meds/screens/patients/Reminder/add_remider.dart';
+import 'package:aarogya_meds/screens/patients/wrapper.dart';
+import 'package:aarogya_meds/screens/patients/Auth/singin.dart';
+import 'package:aarogya_meds/screens/patients/Pharmarcy/pharmacy_list.dart';
+import 'package:aarogya_meds/screens/patients/Auth/siginup.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const AddReminderScreen(),
+      home: const Wrapper(),
     );
   }
 }

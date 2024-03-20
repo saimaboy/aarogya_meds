@@ -1,5 +1,7 @@
+import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/menu_edit_appbar.dart';
+import 'package:aarogya_meds/widget/buttons/button.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -13,16 +15,18 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const MenuEdit(title: "Profile"),
-        body: Container(
-          padding: const EdgeInsets.all(16.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            const SizedBox(height: 20),
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 40),
             Stack(
               alignment: Alignment.center,
               children: [
                 Container(
+                  width: 100,
+                  height: 100,
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -39,13 +43,44 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
             const SizedBox(height: 6),
-            const Text("Supiri AP"),
+            const Text(
+              "Supiri AP",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(height: 6),
+            SizedBox(
+              height: 40,
+              width: 150,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primary,
+                  shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfileEditPage(),
+                    ),
+                  );
+                },
+                child: const Center(
+                  child: Text(
+                    "Edit Profile",
+                    style: TextStyle(
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             const Divider(
               color: AppColors.primary,
               height: 30,
               thickness: 2,
             ),
             const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "General Information",
@@ -100,8 +135,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
-          ]),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }
 

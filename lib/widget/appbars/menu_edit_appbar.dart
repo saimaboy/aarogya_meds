@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/screens/Profile/profile_edit.dart';
+import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 

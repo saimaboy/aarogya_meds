@@ -1,4 +1,4 @@
-import 'package:aarogya_meds/screens/Auth/siginup.dart';
+import 'package:aarogya_meds/screens/patients/Auth/siginup.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
