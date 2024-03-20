@@ -1,6 +1,5 @@
 
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddReminderScreen extends StatefulWidget {
@@ -43,7 +42,7 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               ),
             ),
              SizedBox(height: size.height*0.01,),
-            Text(
+            const Text(
               "Select Day",
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
             Row(
@@ -254,8 +253,8 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               ],
             ),
             SizedBox(height: size.height*0.05,),
-            Text("Set a Time",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
-            Text("Active the Field using check box",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
+            const Text("Set a Time",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+            const Text("Active the Field using check box",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
             Row(
               children: [
                 Expanded(
@@ -371,7 +370,7 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                           floatingLabelBehavior: FloatingLabelBehavior.never,
                           fillColor: Colors.transparent,
                           filled: true,
-                          labelStyle: TextStyle(color: AppColors.textprimary,fontSize: 16,fontWeight: FontWeight.w700),
+                          labelStyle: const TextStyle(color: AppColors.textprimary,fontSize: 16,fontWeight: FontWeight.w700),
                         )
                     ),
                   ),
