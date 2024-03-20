@@ -28,18 +28,11 @@ class BackDots extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         title,
         style: const TextStyle(
-            color: AppColors.primary,
-            fontSize: 18,
-            fontWeight: FontWeight.w500),
-      ),
-      actions: const [
-        Icon(
-          Icons.more_vert,
-          size: 30,
           color: AppColors.primary,
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
         ),
-        SizedBox(width: 10)
-      ],
+      ),
     );
   }
 }

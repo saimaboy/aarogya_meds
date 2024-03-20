@@ -1,5 +1,8 @@
 import 'package:aarogya_meds/screens/Reminder/add_remider.dart';
 import 'package:aarogya_meds/screens/wrapper.dart';
+import 'package:aarogya_meds/screens/Auth/singin.dart';
+import 'package:aarogya_meds/screens/Pharmarcy/pharmacy_list.dart';
+import 'package:aarogya_meds/screens/Auth/siginup.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
