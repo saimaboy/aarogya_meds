@@ -1,9 +1,4 @@
-import 'package:aarogya_meds/screens/patients/Profile/profile_main.dart';
-import 'package:aarogya_meds/screens/patients/Reminder/add_remider.dart';
-import 'package:aarogya_meds/screens/patients/wrapper.dart';
-import 'package:aarogya_meds/screens/patients/Auth/singin.dart';
-import 'package:aarogya_meds/screens/patients/Pharmarcy/pharmacy_list.dart';
-import 'package:aarogya_meds/screens/patients/Auth/siginup.dart';
+import 'package:aarogya_meds/screens/patients/Inbox/inbox_page.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const Wrapper(),
+      home: const InboxPage(),
     );
   }
 }

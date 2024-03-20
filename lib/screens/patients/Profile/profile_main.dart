@@ -1,7 +1,6 @@
 import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/menu_edit_appbar.dart';
-import 'package:aarogya_meds/widget/buttons/button.dart';
+import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,6 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const BackDots(title: "Inbox"),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(
