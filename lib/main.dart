@@ -1,3 +1,5 @@
+import 'package:aarogya_meds/screens/Reminder/add_remider.dart';
+import 'package:aarogya_meds/screens/wrapper.dart';
 import 'package:aarogya_meds/screens/Auth/singin.dart';
 import 'package:aarogya_meds/screens/Pharmarcy/pharmacy_list.dart';
 import 'package:aarogya_meds/screens/Auth/siginup.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const AppSignin(),
+      home: const AddReminderScreen(),
     );
   }
 }
