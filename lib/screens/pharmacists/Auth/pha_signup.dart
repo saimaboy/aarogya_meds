@@ -4,7 +4,6 @@ import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class PharmacistsSignUp extends StatefulWidget {
   const PharmacistsSignUp({super.key});
@@ -21,7 +20,6 @@ class _PharmacistsSignUpState extends State<PharmacistsSignUp> {
   final TextEditingController _phaNameController = TextEditingController();
   final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
   bool checked = false;
   final _formKey = GlobalKey<FormState>();
   DateTime selectedDate = DateTime.now();

@@ -1,6 +1,5 @@
 import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart'
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -14,7 +13,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BackDots(title: "Inbox"),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -44,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 6),
             const Text(
-              "Supiri AP",
+              "Naveen Sahasra",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 6),
@@ -93,11 +91,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(height: 20),
                 ProfileInfoItem(
                   title: 'Email',
-                  value: 'ap@gmail.com',
+                  value: 'example@gmail.com',
                 ),
                 ProfileInfoItem(
                   title: 'Mobile',
-                  value: '0772154775',
+                  value: '0771234569',
                 ),
                 ProfileInfoItem(
                   title: 'Address',
@@ -105,7 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 ProfileInfoItem(
                   title: 'Date of Birth',
-                  value: '30.01.2000',
+                  value: '24.03.1997',
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -131,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 ProfileInfoItem(
                   title: 'Blood Type',
-                  value: '0 Possitive',
+                  value: 'O Possitive',
                 ),
               ],
             ),
