@@ -1,27 +1,25 @@
-import 'package:aarogya_meds/screens/patients/Auth/signin.dart';
+import 'package:aarogya_meds/screens/pharmacists/Auth/pha_signin.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class PharmacistsSignUp extends StatefulWidget {
   const PharmacistsSignUp({super.key});
 
   @override
-  State<PharmacistsSignUp> createState() => _AppSignUpState();
+  State<PharmacistsSignUp> createState() => _PharmacistsSignUpState();
 }
 
-class _AppSignUpState extends State<PharmacistsSignUp> {
+class _PharmacistsSignUpState extends State<PharmacistsSignUp> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwController = TextEditingController();
   final TextEditingController _cpwController = TextEditingController();
-  final TextEditingController _bdayController = TextEditingController();
+  final TextEditingController _phaNameController = TextEditingController();
   final TextEditingController _mobileController = TextEditingController();
-  final TextEditingController _weightController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
   bool checked = false;
   final _formKey = GlobalKey<FormState>();
   DateTime selectedDate = DateTime.now();
@@ -34,10 +32,7 @@ class _AppSignUpState extends State<PharmacistsSignUp> {
             lastDate: DateTime(2100))
         .then((value) {
       selectedDate = value!;
-      setState(() {
-        String formatDate = DateFormat('y-MM-dd').format(selectedDate);
-        _bdayController.text = formatDate;
-      });
+      setState(() {});
     });
   }
 
@@ -51,7 +46,7 @@ class _AppSignUpState extends State<PharmacistsSignUp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              const Text("Create Account", style: appTextHeader1),
+              const Text("Create Pharmacists Account", style: appTextHeader1),
               const SizedBox(height: 20),
               Form(
                 key: _formKey,
@@ -78,23 +73,15 @@ class _AppSignUpState extends State<PharmacistsSignUp> {
                       errormsg: 'Can\'t be empty',
                     ),
                     AppTextFormField(
-                      hintText: 'Birthday',
-                      controller: _bdayController,
-                      readOnly: true,
-                      onTap: datePicker,
-                      fieldName: 'Birthday',
-                    ),
-                    AppTextFormField(
-                      controller: _weightController,
-                      fieldName: 'Weight',
-                      hintText: 'Enter your weight',
+                      controller: _phaNameController,
+                      fieldName: 'Pharmacy Name',
+                      hintText: 'Enter Pharmacy Name',
                       errormsg: 'Can\'t be empty',
-                      inputtype: TextInputType.number,
                     ),
                     AppTextFormField(
-                      controller: _heightController,
-                      fieldName: 'Height',
-                      hintText: 'Enter your height',
+                      controller: _addressController,
+                      fieldName: 'Address',
+                      hintText: 'Enter Pharmacy address',
                       errormsg: 'Can\'t be empty',
                       inputtype: TextInputType.number,
                     ),
@@ -174,7 +161,8 @@ class _AppSignUpState extends State<PharmacistsSignUp> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AppSignin(),
+                                  builder: (context) =>
+                                      const PharmacistsSignin(),
                                 ),
                               );
                             },

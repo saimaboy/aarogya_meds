@@ -1,5 +1,4 @@
 import 'package:aarogya_meds/screens/patients/Inbox/message_details_page.dart';
-import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:flutter/material.dart';
 
 class InboxPage extends StatelessWidget {
@@ -8,13 +7,15 @@ class InboxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BackDots(title: "Inbox"),
-      body: ListView.builder(
-        itemCount: _messages.length,
-        itemBuilder: (context, index) {
-          final message = _messages[index];
-          return _buildMessageListItem(context, message);
-        },
+      body: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: ListView.builder(
+          itemCount: _messages.length,
+          itemBuilder: (context, index) {
+            final message = _messages[index];
+            return _buildMessageListItem(context, message);
+          },
+        ),
       ),
     );
   }
