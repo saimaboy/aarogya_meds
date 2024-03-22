@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const Wrapper(),
+      home: const PharmacistsWrapper(),
     );
   }
 }

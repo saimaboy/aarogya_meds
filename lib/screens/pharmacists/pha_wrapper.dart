@@ -1,5 +1,5 @@
-import 'package:aarogya_meds/screens/patients/Inbox/inbox_page.dart';
 import 'package:aarogya_meds/screens/patients/pill.dart';
+import 'package:aarogya_meds/screens/pharmacists/Drugs/pha_drugs.dart';
 import 'package:aarogya_meds/screens/pharmacists/Home/pha_home.dart';
 import 'package:aarogya_meds/screens/pharmacists/Profile/pha_profile.dart';
 import 'package:aarogya_meds/utils/common.dart';
@@ -18,7 +18,7 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
 
   final List<Widget> _widgetOptions = <Widget>[
     const PharmacistsHome(),
-     const InboxPage(),
+    PharmacistsDrugs(),
     const PillPage(),
     const PharmacistProfile(),
   ];
@@ -41,7 +41,7 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
           items: [
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/assets/icons/Calendar.png',
+                imagePath: 'lib/assets/icons/Home.png',
                 isSelected: _selectedIndex == 0,
                 onTap: () => onItemTap(0),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -50,7 +50,7 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/assets/icons/Search.png',
+                imagePath: 'lib/assets/icons/Pill.png',
                 isSelected: _selectedIndex == 1,
                 onTap: () => onItemTap(1),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -59,7 +59,7 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/assets/icons/Pill.png',
+                imagePath: 'lib/assets/icons/Chat.png',
                 isSelected: _selectedIndex == 2,
                 onTap: () => onItemTap(2),
                 padding: const EdgeInsets.only(top: 7.0),
@@ -68,7 +68,7 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
             ),
             BottomNavigationBarItem(
               icon: CustomIcon(
-                imagePath: 'lib/assets/icons/Menu.png',
+                imagePath: 'lib/assets/icons/Profile.png',
                 isSelected: _selectedIndex == 3,
                 onTap: () => onItemTap(3),
                 padding: const EdgeInsets.only(top: 7.0),
