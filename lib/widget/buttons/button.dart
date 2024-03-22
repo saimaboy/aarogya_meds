@@ -4,7 +4,7 @@ import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
 class ButtonPrimary extends StatelessWidget {
-  final Function function;
+  final Function() function;
   final String buttonText;
   const ButtonPrimary({
     super.key,
@@ -20,7 +20,7 @@ class ButtonPrimary extends StatelessWidget {
         backgroundColor: AppColors.primary,
         shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
       ),
-      onPressed: function(),
+      onPressed: function,
       child: Center(
         child: Text(
           buttonText,
