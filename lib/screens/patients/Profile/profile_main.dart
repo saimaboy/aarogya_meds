@@ -1,4 +1,5 @@
 import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
+import 'package:aarogya_meds/screens/patients/Reminder/reminder_screen.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -132,6 +133,21 @@ class _ProfilePageState extends State<ProfilePage> {
                   value: 'O Possitive',
                 ),
               ],
+            ),
+            const SizedBox(height: 40,),
+            InkWell(
+              onTap: (){
+                print("data");
+                Navigator.push(context,MaterialPageRoute(
+                    builder: (context) => const ReminderScreen(),),
+                );},
+              child: Container(
+                color:Colors.amber,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0,horizontal: 8),
+                  child: Text("REMINDER"),
+                ),
+              ),
             ),
           ],
         ),

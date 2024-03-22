@@ -1,6 +1,9 @@
 
 import 'package:aarogya_meds/utils/common.dart';
+import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class AddReminderScreen extends StatefulWidget {
@@ -11,7 +14,11 @@ class AddReminderScreen extends StatefulWidget {
 }
 
 class _AddReminderScreenState extends State<AddReminderScreen> {
-  final TextEditingController closedTimeController =TextEditingController();
+
+  final TextEditingController oneTimeController =TextEditingController();
+  final TextEditingController twoTimeController =TextEditingController();
+  final TextEditingController threeTimeController =TextEditingController();
+
   bool sundayRadio=false;
   bool mondayRadio=false;
   bool tuesdayRadio=false;
@@ -19,30 +26,38 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
   bool thursdayRadio=false;
   bool fridayRadio=false;
   bool saturdayRadio=false;
+
   bool oneTimeRadio=false;
   bool twoTimeRadio=false;
   bool threeTimeRadio=false;
-  String? selectedvalue="am";
+  bool statusRadio=false;
+
+  final List<String> items = [
+    'Important',
+    'Before Foods',
+    'After Foods',
+  ];
+  String? selectedValue;
+
   @override
   Widget build(BuildContext context) {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: BackDots(title: "ADD REMINDER"),
       body:Padding(
         padding: const EdgeInsets.symmetric(horizontal:015),
         child: ListView(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: size.width*0.2),
-              child: const Text(
-                "Add Reminder",
-                style: TextStyle(fontWeight: FontWeight.w700,fontSize: 30),
-              ),
-            ),
-             SizedBox(height: size.height*0.01,),
+            // const SizedBox(height: 40,),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: size.width*0.2),
+            //   child: const Text(
+            //     "Add Reminder",
+            //     style: TextStyle(fontWeight: FontWeight.w700,fontSize: 30),
+            //   ),
+            // ),
+              SizedBox(height: size.height*0.04,),
             Text(
               "Select Day",
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
@@ -57,7 +72,6 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                         setState(() {
                           sundayRadio=value!;
                         });
-
                       },
                       activeColor:AppColors.primary,
                         //checkColor:Colors.red ,
@@ -253,15 +267,25 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                 ),
               ],
             ),
-            SizedBox(height: size.height*0.05,),
-            Text("Set a Time",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
-            Text("Active the Field using check box",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
+            SizedBox(height: size.height*0.04,),
+            const Text("Set a Time",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+            const Text("Active the Field using check box",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
             Row(
               children: [
                 Expanded(
                   child: TextField(
-                    controller: closedTimeController,
+                    controller: oneTimeController,
                     maxLines: 1,
+                    readOnly: true,
+                    keyboardType: TextInputType.datetime,
+                    onTap:() async{
+                      final TimeOfDay? pickedTime=await showTimePicker(context: context, initialTime: TimeOfDay.now());
+                      if(pickedTime!=null){
+                        setState(() {
+                          oneTimeController.text=pickedTime.format(context);
+                        });
+                      }
+                    },
                     decoration: InputDecoration(
                       labelStyle: const TextStyle(color:AppColors.textprimary),
                       enabled: oneTimeRadio,
@@ -271,36 +295,7 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: IgnorePointer(
-                    ignoring: !oneTimeRadio,
-                    child: DropdownButtonFormField(
-                        value:selectedvalue,
-                        items: <String>["am", "pm"].map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value,style: const TextStyle(color: AppColors.textprimary,fontSize: 15),),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedvalue=value;
-                          });
-                        },
-                        icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 24,),
-                        style: const TextStyle(fontSize: 16),
-                        decoration:  InputDecoration(
-                          enabled: oneTimeRadio,
-                          border: InputBorder.none,
-                          //labelText: "Select ",
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          labelStyle: const TextStyle(color: AppColors.textprimary,fontSize: 16,fontWeight: FontWeight.w700),
-                        )
-                    ),
-                  ),
-                ),
+
                 Expanded(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -335,44 +330,24 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               children: [
                 Expanded(
                   child: TextField(
-                    controller: closedTimeController,
+                    controller: twoTimeController,
+                    readOnly: true,
                     maxLines: 1,
+                    keyboardType: TextInputType.datetime,
+                    onTap:() async{
+                      final TimeOfDay? pickedTime=await showTimePicker(context: context, initialTime: TimeOfDay.now());
+                      if(pickedTime!=null){
+                        setState(() {
+                          twoTimeController.text=pickedTime.format(context);
+                        });
+                      }
+                    },
                     decoration: InputDecoration(
                       labelStyle: const TextStyle(color:AppColors.textprimary),
                       enabled: twoTimeRadio,
                       border: InputBorder.none,
                       label: const Text("Enter Time",style: TextStyle(fontSize: 15),),
                       floatingLabelBehavior: FloatingLabelBehavior.never,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: IgnorePointer(
-                    ignoring: !twoTimeRadio,
-                    child: DropdownButtonFormField(
-                        value:selectedvalue,
-                        items: <String>["am", "pm"].map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value,style: const TextStyle(color: AppColors.textprimary,fontSize: 15),),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedvalue=value;
-                          });
-                        },
-                        icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 24,),
-                        style: const TextStyle(fontSize: 16),
-                        decoration:  InputDecoration(
-                          enabled: twoTimeRadio,
-                          border: InputBorder.none,
-                          //labelText: "Select ",
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          labelStyle: TextStyle(color: AppColors.textprimary,fontSize: 16,fontWeight: FontWeight.w700),
-                        )
                     ),
                   ),
                 ),
@@ -410,8 +385,18 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               children: [
                 Expanded(
                   child: TextField(
-                    controller: closedTimeController,
+                    controller: threeTimeController,
                     maxLines: 1,
+                    readOnly: true,
+                    keyboardType: TextInputType.datetime,
+                    onTap:() async{
+                      final TimeOfDay? pickedTime=await showTimePicker(context: context, initialTime: TimeOfDay.now());
+                      if(pickedTime!=null){
+                        setState(() {
+                          threeTimeController.text=pickedTime.format(context);
+                        });
+                      }
+                    },
                     decoration: InputDecoration(
                       labelStyle: const TextStyle(color:AppColors.textprimary),
                       enabled: threeTimeRadio,
@@ -421,36 +406,7 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: IgnorePointer(
-                    ignoring: !threeTimeRadio,
-                    child: DropdownButtonFormField(
-                        value:selectedvalue,
-                        items: <String>["am", "pm"].map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value,style: const TextStyle(color: AppColors.textprimary,fontSize: 15),),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedvalue=value;
-                          });
-                        },
-                        icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 24,),
-                        style: const TextStyle(fontSize: 16),
-                        decoration:  InputDecoration(
-                          enabled: threeTimeRadio,
-                          border: InputBorder.none,
-                          //labelText: "Select ",
-                          floatingLabelBehavior: FloatingLabelBehavior.never,
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          labelStyle: const TextStyle(color: AppColors.textprimary,fontSize: 16,fontWeight: FontWeight.w700),
-                        )
-                    ),
-                  ),
-                ),
+
                 Expanded(
                     child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -480,55 +436,139 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                 ))
               ],
             ),
-            SizedBox(height: size.height*0.08,),
+            SizedBox(height: size.height*0.04,),
+            const Text(
+              "Status",
+              style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+            SizedBox(height: size.height*0.01,),
+            DropdownButtonHideUnderline(
+              child: DropdownButton2<String>(
+                isExpanded: true,
+                hint: const Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Select Item',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textprimary,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+                items: items
+                    .map((String item) => DropdownMenuItem<String>(
+                  value: item,
+                  child: Text(
+                    item,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textprimary,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ))
+                    .toList(),
+                value: selectedValue,
+                onChanged: (String? value) {
+                  setState(() {
+                    selectedValue = value;
+                  });
+                },
+                buttonStyleData: ButtonStyleData(
+                  height: 50,
+                  width: 160,
+                  padding: const EdgeInsets.only(left: 14, right: 14),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                      color: Colors.black26,
+                    ),
+                    color: AppColors.white,
+                  ),
+                  elevation: 2,
+                ),
+                iconStyleData: const IconStyleData(
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                  ),
+                  iconSize: 25,
+                  iconEnabledColor: AppColors.primary,
+                ),
+                dropdownStyleData: DropdownStyleData(
+                  maxHeight: size.height*0.2,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: AppColors.white,
+                  ),
+                  offset: const Offset(0, 0),
+                  scrollbarTheme: ScrollbarThemeData(
+                    radius: const Radius.circular(40),
+                    thickness: MaterialStateProperty.all<double>(6),
+                    thumbVisibility: MaterialStateProperty.all<bool>(true),
+                  ),
+                ),
+                menuItemStyleData: const MenuItemStyleData(
+                  height: 40,
+                  padding: EdgeInsets.only(left: 14, right: 14),
+                ),
+              ),
+            ),
+            SizedBox(height: size.height*0.05,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: size.width*0.1),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(AppColors.primarylite),
-                      foregroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(vertical: 10,horizontal: 20)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(AppColors.primarylite),
+                        foregroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(vertical: 10,horizontal: 20)),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
+                        elevation: MaterialStateProperty.all<double>(5),
                       ),
-                      elevation: MaterialStateProperty.all<double>(5),
-                    ),
-                    onPressed: (){},
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical:10),
-                      child: Text("Add Reminder"),
+                      onPressed: (){},
+                      child: Container(
+                          width: size.width*0.3,
+                          height: size.height*0.025,
+                          child: Center(child: const Text("Add Reminder"))),
                     ),
                   ),
                   SizedBox(width: size.width*0.04,),
-                  ElevatedButton(
-                    style: ButtonStyle(
-
-                      backgroundColor: MaterialStateProperty.all<Color>(AppColors.primarylite),
-                      foregroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(vertical: 10,horizontal: 37)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(AppColors.primarylite),
+                        foregroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                       // padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(horizontal: 10)),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
+                        elevation: MaterialStateProperty.all<double>(5),
                       ),
-                      elevation: MaterialStateProperty.all<double>(5),
-                    ),
-                    onPressed: (){},
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical:10),
-                      child: Text("Cancel"),
+                      onPressed: (){},
+                      child:  Container(
+                        width: size.width*0.3,
+                          height: size.height*0.025,
+                          child: Center(child: const Text("Cancel"))),
                     ),
                   ),
                 ],
               ),
             ),
             SizedBox(height: size.height*0.03,),
-
           ],
         ),
       ),

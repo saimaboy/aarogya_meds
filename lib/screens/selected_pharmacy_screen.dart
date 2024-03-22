@@ -201,7 +201,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
               thickness: 0.8,
             ),
             SizedBox(height: size.height*0.04,),
-            ButtonPrimary(function: (){print("should directing to the chat ");}, buttonText: "Send Prescription", color: AppColors.primary),
+            ButtonPrimary(function: (){print("should directing to the chat ");}, buttonText: "Send Prescription"),
             SizedBox(height: size.height*0.04,),
           ],
         ),
