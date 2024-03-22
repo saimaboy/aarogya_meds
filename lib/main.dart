@@ -1,6 +1,5 @@
-import 'package:aarogya_meds/screens/Reminder/add_remider.dart';
-import 'package:aarogya_meds/screens/selected_pharmacy_screen.dart';
-import 'package:aarogya_meds/screens/wrapper.dart';
+
+import 'package:aarogya_meds/screens/patients/wrapper.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const AddReminderScreen(),
+      home: const Wrapper(),
     );
   }
 }

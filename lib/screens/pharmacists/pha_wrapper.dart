@@ -1,25 +1,26 @@
-import 'package:aarogya_meds/screens/Home/home_main.dart';
-import 'package:aarogya_meds/screens/pill.dart';
-import 'package:aarogya_meds/screens/search.dart';
+import 'package:aarogya_meds/screens/patients/Inbox/inbox_page.dart';
+import 'package:aarogya_meds/screens/patients/pill.dart';
+import 'package:aarogya_meds/screens/pharmacists/Home/pha_home.dart';
+import 'package:aarogya_meds/screens/pharmacists/Profile/pha_profile.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/navbar_icon.dart';
 import 'package:flutter/material.dart';
 
-class Wrapper extends StatefulWidget {
-  const Wrapper({super.key});
+class PharmacistsWrapper extends StatefulWidget {
+  const PharmacistsWrapper({super.key});
 
   @override
-  State<Wrapper> createState() => _WrapperState();
+  State<PharmacistsWrapper> createState() => _PharmacistsWrapperState();
 }
 
-class _WrapperState extends State<Wrapper> {
+class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
-    const HomeMain(),
-    const SearchPage(),
+    const PharmacistsHome(),
+     const InboxPage(),
     const PillPage(),
-    const PillPage(),
+    const PharmacistProfile(),
   ];
 
   void onItemTap(int index) {
