@@ -1,7 +1,5 @@
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
@@ -519,59 +517,52 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               height: size.height * 0.05,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            AppColors.primarylite),
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(AppColors.primary),
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20)),
+                  SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primary,
                         shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                        RoundedRectangleBorder(borderRadius: appBorderRadius),
                         ),
-                        elevation: MaterialStateProperty.all<double>(5),
+                  onPressed: () {},
+                  child: const Center(
+                  child: Text(
+                      "Add Reminder",
+                      style: TextStyle(
+                      color: AppColors.white,
                       ),
-                      onPressed: () {},
-                      child: Container(
-                          width: size.width * 0.3,
-                          height: size.height * 0.025,
-                          child: const Center(child: Text("Add Reminder"))),
-                    ),
+                  ),),
+                  ),
                   ),
                   SizedBox(
                     width: size.width * 0.04,
                   ),
-                  Expanded(
+                  SizedBox(width: size.width*0.04,),
+                  SizedBox(
+                    height: 40,
+                    width: 150,
                     child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            AppColors.primarylite),
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(AppColors.primary),
-                        // padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(horizontal: 10)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        elevation: MaterialStateProperty.all<double>(5),
+                      style: ElevatedButton.styleFrom(
+                        surfaceTintColor: Colors.white,
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
+                        side: const BorderSide(color: AppColors.primarylite,width: 2),
                       ),
                       onPressed: () {},
-                      child: Container(
-                          width: size.width * 0.3,
-                          height: size.height * 0.025,
-                          child: const Center(child: Text("Cancel"))),
+                      child: const Center(
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(
+                            color: AppColors.primary,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
