@@ -40,14 +40,14 @@ class ReminderScreen extends StatelessWidget {
                             children: [
                               const Icon(Icons.add_alarm),
                               const SizedBox( width: 20,),
-                              Expanded(
-                                  child: Container(
-                                      child: const Text(
-                                        " lorem ipsum  as dad ad daw da d asda  ad asd asdawd asd a ad asd asd as daw das das dad as dd ad ad a dsa d",
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
-                                      ),
-                                  ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Medicine Name 1,Medicine Name 2.....",style:TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+                                  Text("Selected days:",style:TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                  Text("Time:",style:TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                  Text("fequency for day:",style:TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                                ],
                               ),
                             ],
                           ),
