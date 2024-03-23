@@ -34,13 +34,13 @@ class _HomeMainState extends State<HomeMain> {
                     ),
                   ),
                   width: double.infinity,
-                  height: 310,
+                  height: 280,
                   child: Padding(
                     padding: appPagePadding,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 50),
+                        const SizedBox(height: 10),
                         const Text(
                           'Good Morning Saantha',
                           style: TextStyle(
@@ -123,7 +123,7 @@ class _HomeMainState extends State<HomeMain> {
               ],
             ),
             Positioned(
-              top: 200,
+              top: 170,
               left: 0,
               right: 0,
               child: Padding(

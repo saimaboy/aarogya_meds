@@ -1,4 +1,5 @@
 import 'package:aarogya_meds/screens/patients/Inbox/message_details_page.dart';
+import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
 import 'package:flutter/material.dart';
 
 class InboxPage extends StatelessWidget {
@@ -7,8 +8,12 @@ class InboxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const MenuAppbar(
+        title: "Chats",
+        isHome: true,
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.only(top: 10),
         child: ListView.builder(
           itemCount: _messages.length,
           itemBuilder: (context, index) {
