@@ -1,3 +1,4 @@
+import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/menu_appbar2.dart';
 import 'package:aarogya_meds/screens/pharmacists/Drugs/pha_add_drugs.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class PharmacistsDrugs extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.primary,
         onPressed: () {
           // Show the AddDrugDialog when the button is pressed
           showDialog(
@@ -46,6 +48,7 @@ class PharmacistsDrugs extends StatelessWidget {
         },
         child: const Icon(
           Icons.add,
+          color: AppColors.white,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,

@@ -28,7 +28,7 @@ class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       leading: IconButton(
         onPressed: () {
-          Navigator.pop(context);
+          // Navigator.pop(context);
         },
         icon: Icon(
           Icons.menu,

@@ -1,4 +1,3 @@
-import 'package:aarogya_meds/screens/patients/Reminder/add_remider.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
