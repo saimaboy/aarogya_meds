@@ -30,14 +30,14 @@ class PrescriptionOrder extends StatelessWidget {
             OrderCard(
               orderId: 43535,
               orderStatus: "Order Accepted",
-              cost: 254,
+              cost: 12,
               datetime: DateTime.parse("2023-10-23"),
               cardHeight: 0.28,
             ),
             OrderCard(
               orderId: 43535,
               orderStatus: "Pending",
-              cost: 254,
+              cost: 34,
               datetime: DateTime.parse("2023-10-23"),
               cardHeight: 0.28,
             ),
@@ -54,7 +54,7 @@ class PrescriptionOrder extends StatelessWidget {
             OrderCard(
               orderId: 43535,
               orderStatus: "Cancelled",
-              cost: 254,
+              cost: 56,
               datetime: DateTime.parse("2023-10-23"),
               cardHeight: 0.25,
             ),

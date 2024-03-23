@@ -11,7 +11,7 @@ class MessageDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BackDots(title: message.sender),
+      appBar: BackDots(title: message.sender, isHome: true),
       body: Column(
         children: [
           Expanded(

@@ -43,6 +43,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: const CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.transparent,
+                      backgroundImage:
+                          AssetImage("lib/assets/images/propic.jpg"),
                     ),
                   ),
                 ],

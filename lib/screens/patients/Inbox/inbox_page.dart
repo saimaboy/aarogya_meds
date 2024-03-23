@@ -34,7 +34,19 @@ class InboxPage extends StatelessWidget {
           style: const TextStyle(color: Colors.white),
         ),
       ),
-      title: Text(message.sender),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(message.sender),
+          Text(
+            message.time,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
       subtitle: Text(message.body),
       onTap: () {
         // Add functionality to handle message tap
@@ -56,22 +68,26 @@ class InboxPage extends StatelessWidget {
 class Message {
   final String sender;
   final String body;
+  final String time;
 
-  Message({required this.sender, required this.body});
+  Message({required this.sender, required this.body, required this.time});
 }
 
 final List<Message> _messages = [
   Message(
     sender: 'John Doe',
     body: 'Hi, how are you?',
+    time: "12.53 PM",
   ),
   Message(
     sender: 'Jane Smith',
     body: 'Are you available for a meeting tomorrow?',
+    time: "5.21 PM",
   ),
   Message(
     sender: 'Alice Johnson',
     body: 'Don\'t forget about the project deadline!',
+    time: "10.11 AM",
   ),
   // Add more messages as needed
 ];
