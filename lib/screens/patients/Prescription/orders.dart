@@ -1,5 +1,5 @@
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
+import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
 import 'package:aarogya_meds/widget/cards/order_card.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,10 @@ class PrescriptionOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BackDots(title: "My Prescription"),
+      appBar: const MenuAppbar(
+        title: "My Prescription",
+        isHome: true,
+      ),
       body: Padding(
         padding: appPagePadding,
         child: Column(

@@ -1,5 +1,5 @@
-
 import 'package:aarogya_meds/screens/patients/wrapper.dart';
+import 'package:aarogya_meds/screens/pharmacists/pha_wrapper.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const PharmacistsWrapper(),
+      home: const Wrapper(),
     );
   }
 }

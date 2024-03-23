@@ -1,5 +1,7 @@
 import 'package:aarogya_meds/screens/patients/Home/home_card.dart';
 import 'package:aarogya_meds/utils/common.dart';
+import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
+import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeMain extends StatefulWidget {
@@ -14,6 +16,10 @@ class _HomeMainState extends State<HomeMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const MenuAppbar(
+        title: "",
+        isHome: true,
+      ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -85,7 +91,7 @@ class _HomeMainState extends State<HomeMain> {
                   child: Column(
                     children: [
                       Text(
-                        'Daily Insights',
+                        'Upcoming Reminds',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,

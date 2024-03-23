@@ -2,7 +2,7 @@ import 'package:aarogya_meds/screens/patients/Reminder/add_remider.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
-class BackDots extends StatelessWidget implements PreferredSizeWidget {
+class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final int? notifications;
   final IconData? icon;
@@ -10,7 +10,7 @@ class BackDots extends StatelessWidget implements PreferredSizeWidget {
   final bool? isHome;
 
   // ignore: use_key_in_widget_constructors
-  const BackDots({
+  const MenuAppbar({
     this.title,
     this.notifications,
     this.icon,
@@ -32,7 +32,7 @@ class BackDots extends StatelessWidget implements PreferredSizeWidget {
           Navigator.pop(context);
         },
         icon: Icon(
-          Icons.arrow_back,
+          Icons.menu,
           color: isHome == true ? AppColors.white : AppColors.primary,
         ),
       ),
