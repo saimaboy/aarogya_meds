@@ -1,6 +1,6 @@
 import 'package:aarogya_meds/screens/patients/Home/home_card.dart';
+import 'package:aarogya_meds/screens/patients/Pharmarcy/pharmacy_list.dart';
 import 'package:aarogya_meds/utils/common.dart';
-import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +42,7 @@ class _HomeMainState extends State<HomeMain> {
                       children: [
                         const SizedBox(height: 10),
                         const Text(
-                          'Good Morning Saantha',
+                          'Good Morning Wenuk',
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w500,
@@ -76,7 +76,14 @@ class _HomeMainState extends State<HomeMain> {
                               borderSide: BorderSide.none,
                             ),
                             suffixIcon: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const PharmacyList(),
+                                  ),
+                                );
+                              },
                               icon: const Icon(Icons.search),
                             ),
                           ),
