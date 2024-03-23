@@ -1,3 +1,4 @@
+import 'package:aarogya_meds/screens/pharmacists/Drugs/pha_add_drugs.dart';
 import 'package:flutter/material.dart';
 
 class PharmacistsDrugs extends StatelessWidget {
@@ -27,9 +28,23 @@ class PharmacistsDrugs extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add functionality for the floating action button
+          // Show the AddDrugDialog when the button is pressed
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AddDrugDialog(
+                onAdd: (String name, double price, int quantity) {
+                  // Handle adding the drug to the list here
+                  // For demonstration, let's just print the entered data
+                  print('Name: $name, Price: $price, Quantity: $quantity');
+                },
+              );
+            },
+          );
         },
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
