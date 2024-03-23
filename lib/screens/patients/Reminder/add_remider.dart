@@ -1,6 +1,7 @@
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddReminderScreen extends StatefulWidget {
@@ -33,7 +34,11 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
     'Before Foods',
     'After Foods',
   ];
+
   String? selectedValue;
+
+  int clickCount=0;
+  List<Widget> textFields = [];
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +49,6 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 015),
         child: ListView(
           children: [
-            // const SizedBox(height: 40,),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: size.width*0.2),
-            //   child: const Text(
-            //     "Add Reminder",
-            //     style: TextStyle(fontWeight: FontWeight.w700,fontSize: 30),
-            //   ),
-            // ),
             SizedBox(
               height: size.height * 0.04,
             ),
@@ -513,6 +510,45 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                 ),
               ),
             ),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    const Expanded(child: Text("Medicine",style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),)),
+
+                    InkWell(
+                      onTap: (){
+                        setState(() {
+                          clickCount++;
+                          textFields.add(TextField(
+                            decoration: InputDecoration(
+                                labelText: 'For $clickCount Medicine',
+                                suffixIcon: InkWell(
+                                    onTap:(){
+                                      print("Remove");
+                                      setState(()
+                                      {
+                                        clickCount--;
+                                        textFields.removeLast();
+                                      });
+                                      },
+                                    child: Icon(Icons.remove_circle_outline,color: Colors.red,))),
+                          )
+                        );}
+                      );},
+                        child: const Icon(Icons.add)),
+                  ],
+                ),
+                const Divider(thickness: 1,),
+                Column(
+                  children:textFields,
+                )
+              ],
+            ),
+
             SizedBox(
               height: size.height * 0.05,
             ),
