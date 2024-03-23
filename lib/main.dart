@@ -1,5 +1,6 @@
 import 'package:aarogya_meds/screens/patients/wrapper.dart';
 import 'package:aarogya_meds/screens/pharmacists/pha_wrapper.dart';
+import 'package:aarogya_meds/screens/patients/Pharmarcy/selected_pharmacy_screen.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
