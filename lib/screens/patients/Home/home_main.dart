@@ -1,25 +1,122 @@
 import 'package:aarogya_meds/screens/patients/Home/home_card.dart';
 import 'package:aarogya_meds/screens/patients/Pharmarcy/pharmacy_list.dart';
+import 'package:aarogya_meds/screens/patients/Profile/profile_main.dart';
+import 'package:aarogya_meds/screens/patients/Reminder/reminder_screen.dart';
+import 'package:aarogya_meds/screens/patients/wrapper.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});
-
   @override
   State<HomeMain> createState() => _HomeMainState();
 }
 
 class _HomeMainState extends State<HomeMain> {
   TextEditingController searchController = TextEditingController();
+
+  final bool? isHome=true;
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MenuAppbar(
-        title: "",
-        isHome: true,
+      key:_scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: isHome == false ? AppColors.white : AppColors.primary,
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        centerTitle: true,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+        title: Text(
+          "",
+          style: TextStyle(
+            color: isHome == true ? AppColors.white : AppColors.primary,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
+      drawer:Drawer(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.amber,
+          child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: Text(
+                    'Hello Name',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.message),
+                  title: const Text('Home'),
+                  onTap: () {
+                    _scaffoldKey.currentState!.openEndDrawer();
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Wrapper()));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.add_alarm),
+                  title: const Text('Reminder'),
+                  onTap: () {
+                    _scaffoldKey.currentState!.openEndDrawer();
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ReminderScreen()));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.person),
+                  title: const Text('Profile'),
+                  onTap: () {
+                    _scaffoldKey.currentState!.openEndDrawer();
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfilePage()));
+                  },
+                ),
+                SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primary,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: appBorderRadius),
+                      ),
+                      onPressed: () {},
+                      child: const Center(
+                        child: Text(
+                          "Log Out",
+                          style: TextStyle(
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ])),
       body: SingleChildScrollView(
         child: Stack(
           children: [
