@@ -24,27 +24,49 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    onPressed: () {
-                      // Save button action
-                    },
                     style: ElevatedButton.styleFrom(
-                        // Change save button color
-                        backgroundColor: AppColors.primary),
-                    child: const Text(
-                      'Save',
-                      style: TextStyle(color: AppColors.textprimary),
+                      backgroundColor: AppColors.primary,
+                      shape:
+                          RoundedRectangleBorder(borderRadius: appBorderRadius),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfileEditPage(),
+                        ),
+                      );
+                    },
+                    child: const Center(
+                      child: Text(
+                        "Save",
+                        style: TextStyle(
+                          color: AppColors.white,
+                        ),
+                      ),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      // Cancel button action
-                    },
                     style: ElevatedButton.styleFrom(
-                        // Change cancel button color
-                        backgroundColor: AppColors.primary),
-                    child: const Text(
-                      'Cancel',
-                      style: TextStyle(color: AppColors.textprimary),
+                      backgroundColor: AppColors.primary,
+                      shape:
+                          RoundedRectangleBorder(borderRadius: appBorderRadius),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfileEditPage(),
+                        ),
+                      );
+                    },
+                    child: const Center(
+                      child: Text(
+                        "Cancel",
+                        style: TextStyle(
+                          color: AppColors.white,
+                        ),
+                      ),
                     ),
                   ),
                 ],
