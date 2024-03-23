@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SelectedPharmacyScreen extends StatefulWidget {
-  const SelectedPharmacyScreen({super.key});
+  final int pharmacyId;
+
+  const SelectedPharmacyScreen({super.key, required this.pharmacyId});
 
   @override
   State<SelectedPharmacyScreen> createState() => _SelectedPharmacyScreenState();

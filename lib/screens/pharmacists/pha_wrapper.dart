@@ -1,7 +1,6 @@
-import 'package:aarogya_meds/screens/patients/pill.dart';
 import 'package:aarogya_meds/screens/pharmacists/Drugs/pha_drugs.dart';
-import 'package:aarogya_meds/screens/pharmacists/Home/pha_home.dart';
-import 'package:aarogya_meds/screens/pharmacists/Profile/pha_profile.dart';
+import 'package:aarogya_meds/screens/pharmacists/Home/pha_home_main.dart';
+import 'package:aarogya_meds/screens/pharmacists/Inbox/pha_inbox.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/navbar_icon.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +16,9 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
-    const PharmacistsHome(),
-    PharmacistsDrugs(),
-    const PillPage(),
-    const PharmacistProfile(),
+    const PhaHomeMain(),
+    const PharmacistsDrugs(),
+    const PhaInboxPage(),
   ];
 
   void onItemTap(int index) {
@@ -62,15 +60,6 @@ class _PharmacistsWrapperState extends State<PharmacistsWrapper> {
                 imagePath: 'lib/assets/icons/Chat.png',
                 isSelected: _selectedIndex == 2,
                 onTap: () => onItemTap(2),
-                padding: const EdgeInsets.only(top: 7.0),
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: CustomIcon(
-                imagePath: 'lib/assets/icons/Profile.png',
-                isSelected: _selectedIndex == 3,
-                onTap: () => onItemTap(3),
                 padding: const EdgeInsets.only(top: 7.0),
               ),
               label: '',
