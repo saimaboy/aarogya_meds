@@ -1,7 +1,7 @@
 import 'package:aarogya_meds/screens/patients/Profile/profile_edit.dart';
-import 'package:aarogya_meds/screens/patients/Reminder/reminder_screen.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/menu_appbar.dart';
+import 'package:aarogya_meds/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -19,6 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: "Profile",
         isHome: true,
       ),
+      drawer: const CustomDrawer(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(16.0),
@@ -156,13 +157,13 @@ class _ProfilePageState extends State<ProfilePage> {
               //       ),
               //     );
               //   },
-                // child: Container(
-                //   color: Colors.amber,
-                //   child: const Padding(
-                //     padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
-                //     child: Text("REMINDER"),
-                //   ),
-                // ),
+              // child: Container(
+              //   color: Colors.amber,
+              //   child: const Padding(
+              //     padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
+              //     child: Text("REMINDER"),
+              //   ),
+              // ),
               //),
             ],
           ),

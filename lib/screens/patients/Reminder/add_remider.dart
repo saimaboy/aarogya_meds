@@ -531,13 +531,13 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                                   labelText: 'For $clickCount Medicine',
                                   suffixIcon: InkWell(
                                       onTap: () {
-                                        print("Remove");
+                       
                                         setState(() {
                                           clickCount--;
                                           textFields.removeLast();
                                         });
                                       },
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.remove_circle_outline,
                                         color: Colors.red,
                                       ))),

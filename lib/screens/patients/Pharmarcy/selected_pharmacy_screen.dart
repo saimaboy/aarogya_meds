@@ -126,7 +126,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          print("Direction");
+                      
                         },
                         child: Column(
                           children: [
@@ -153,7 +153,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          print("Call");
+                   
                         },
                         child: Column(
                           children: [
@@ -180,7 +180,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          print("Save");
+                   
                         },
                         child: Column(
                           children: [
@@ -207,7 +207,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          print("Share");
+                   
                         },
                         child: Column(
                           children: [
@@ -278,7 +278,7 @@ class _SelectedPharmacyScreenState extends State<SelectedPharmacyScreen> {
               ),
               ButtonPrimary(
                   function: () {
-                    print("should directing to the chat ");
+
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(

@@ -40,7 +40,7 @@ class PharmacistsDrugs extends StatelessWidget {
                 onAdd: (String name, double price, int quantity) {
                   // Handle adding the drug to the list here
                   // For demonstration, let's just print the entered data
-                  print('Name: $name, Price: $price, Quantity: $quantity');
+              //    print('Name: $name, Price: $price, Quantity: $quantity');
                 },
               );
             },
