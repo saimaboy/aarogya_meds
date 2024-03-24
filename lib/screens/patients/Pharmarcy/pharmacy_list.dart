@@ -43,7 +43,7 @@ class _PharmacyListState extends State<PharmacyList> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const BackDots(title: "Pharmacies"),
+      appBar: const BackDots(title: "Pharmacies", isHome: true),
       body: Padding(
         padding: appPagePadding,
         child: Column(

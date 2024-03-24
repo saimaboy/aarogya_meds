@@ -1,5 +1,5 @@
 import 'package:aarogya_meds/models/pharmacy.dart';
-import 'package:aarogya_meds/screens/patients/Pharmarcy/pharmacy_main.dart';
+import 'package:aarogya_meds/screens/patients/Pharmarcy/selected_pharmacy_screen.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class PharmacyCard extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => PharmacyMain(
+              builder: (context) => SelectedPharmacyScreen(
                 pharmacyId: pharmacy.id!,
               ),
             ),

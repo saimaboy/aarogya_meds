@@ -1,7 +1,6 @@
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddReminderScreen extends StatefulWidget {
@@ -37,14 +36,14 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
 
   String? selectedValue;
 
-  int clickCount=0;
+  int clickCount = 0;
   List<Widget> textFields = [];
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const BackDots(title: "ADD REMINDER"),
+      appBar: const BackDots(title: "Add Reminder", isHome: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 015),
         child: ListView(
@@ -517,34 +516,42 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
               children: [
                 Row(
                   children: [
-                    const Expanded(child: Text("Medicine",style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),)),
-
+                    const Expanded(
+                        child: Text(
+                      "Medicine",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    )),
                     InkWell(
-                      onTap: (){
-                        setState(() {
-                          clickCount++;
-                          textFields.add(TextField(
-                            decoration: InputDecoration(
-                                labelText: 'For $clickCount Medicine',
-                                suffixIcon: InkWell(
-                                    onTap:(){
-                                      print("Remove");
-                                      setState(()
-                                      {
-                                        clickCount--;
-                                        textFields.removeLast();
-                                      });
+                        onTap: () {
+                          setState(() {
+                            clickCount++;
+                            textFields.add(TextField(
+                              decoration: InputDecoration(
+                                  labelText: 'For $clickCount Medicine',
+                                  suffixIcon: InkWell(
+                                      onTap: () {
+                                        print("Remove");
+                                        setState(() {
+                                          clickCount--;
+                                          textFields.removeLast();
+                                        });
                                       },
-                                    child: Icon(Icons.remove_circle_outline,color: Colors.red,))),
-                          )
-                        );}
-                      );},
+                                      child: Icon(
+                                        Icons.remove_circle_outline,
+                                        color: Colors.red,
+                                      ))),
+                            ));
+                          });
+                        },
                         child: const Icon(Icons.add)),
                   ],
                 ),
-                const Divider(thickness: 1,),
+                const Divider(
+                  thickness: 1,
+                ),
                 Column(
-                  children:textFields,
+                  children: textFields,
                 )
               ],
             ),
@@ -558,28 +565,31 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                  height: 40,
-                  width: 150,
-                  child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                    height: 40,
+                    width: 150,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
-                        shape:
-                        RoundedRectangleBorder(borderRadius: appBorderRadius),
-                        ),
-                  onPressed: () {},
-                  child: const Center(
-                  child: Text(
-                      "Add Reminder",
-                      style: TextStyle(
-                      color: AppColors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: appBorderRadius),
                       ),
-                  ),),
-                  ),
+                      onPressed: () {},
+                      child: const Center(
+                        child: Text(
+                          "Add Reminder",
+                          style: TextStyle(
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: size.width * 0.04,
                   ),
-                  SizedBox(width: size.width*0.04,),
+                  SizedBox(
+                    width: size.width * 0.04,
+                  ),
                   SizedBox(
                     height: 40,
                     width: 150,
@@ -587,8 +597,10 @@ class _AddReminderScreenState extends State<AddReminderScreen> {
                       style: ElevatedButton.styleFrom(
                         surfaceTintColor: Colors.white,
                         backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
-                        side: const BorderSide(color: AppColors.primarylite,width: 2),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: appBorderRadius),
+                        side: const BorderSide(
+                            color: AppColors.primarylite, width: 2),
                       ),
                       onPressed: () {},
                       child: const Center(

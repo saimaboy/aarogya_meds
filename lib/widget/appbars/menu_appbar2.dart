@@ -1,7 +1,7 @@
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
 
-class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
+class MenuAppbar2 extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final int? notifications;
   final IconData? icon;
@@ -9,7 +9,7 @@ class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
   final bool? isHome;
 
   // ignore: use_key_in_widget_constructors
-  const MenuAppbar({
+  const MenuAppbar2({
     this.title,
     this.notifications,
     this.icon,
@@ -27,9 +27,7 @@ class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       centerTitle: true,
       leading: IconButton(
-        onPressed: () {
-          // Navigator.pop(context);
-        },
+        onPressed: () {},
         icon: Icon(
           Icons.menu,
           color: isHome == true ? AppColors.white : AppColors.primary,
