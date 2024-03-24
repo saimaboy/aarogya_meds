@@ -61,48 +61,51 @@ class _AddDrugDialogState extends State<AddDrugDialog> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors.primary,
-                  width: 1.0,
-                ),
-                borderRadius: BorderRadius.circular(20.0),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
               ),
-              child: TextButton(
-                onPressed: () {
-                  final name = _nameController.text;
-                  final price = double.tryParse(_priceController.text) ?? 0.0;
-                  final quantity = int.tryParse(_quantityController.text) ?? 0;
-                  if (name.isNotEmpty && price > 0 && quantity > 0) {
-                    widget.onAdd(name, price, quantity);
-                    Navigator.of(context).pop();
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content:
-                            Text('Please enter valid data for all fields.'),
-                      ),
-                    );
-                  }
-                },
-                child: const Text('Add'),
+              onPressed: () {
+                final name = _nameController.text;
+                final price = double.tryParse(_priceController.text) ?? 0.0;
+                final quantity = int.tryParse(_quantityController.text) ?? 0;
+                if (name.isNotEmpty && price > 0 && quantity > 0) {
+                  widget.onAdd(name, price, quantity);
+                  Navigator.of(context).pop();
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Please enter valid data for all fields.'),
+                    ),
+                  );
+                }
+              },
+              child: const Center(
+                child: Text(
+                  "Add",
+                  style: TextStyle(
+                    color: AppColors.white,
+                  ),
+                ),
               ),
             ),
             const SizedBox(width: 10), // Add some space between buttons
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors.primary,
-                  width: 1.0,
-                ),
-                borderRadius: BorderRadius.circular(20.0),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                shape: RoundedRectangleBorder(borderRadius: appBorderRadius),
               ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Center(
+                child: Text(
+                  "Cancel",
+                  style: TextStyle(
+                    color: AppColors.white,
+                  ),
+                ),
               ),
             ),
           ],
