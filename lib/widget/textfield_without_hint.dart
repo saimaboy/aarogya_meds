@@ -1,5 +1,7 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TextFieldWithoutHintText extends StatelessWidget {
   bool obsecureText=false;
@@ -10,9 +12,7 @@ class TextFieldWithoutHintText extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-            8,
-          ),
+          borderRadius: appBorderRadius,
         ),
       ),
       obscureText: obsecureText,

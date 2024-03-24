@@ -1,10 +1,13 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TextFieldWithHintText extends StatelessWidget {
   String hintText;
-  bool obsecureText=false;
-  TextFieldWithHintText({super.key, required this.hintText,required this.obsecureText});
+  bool obsecureText = false;
+  TextFieldWithHintText(
+      {super.key, required this.hintText, required this.obsecureText});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +15,7 @@ class TextFieldWithHintText extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-            8,
-          ),
+          borderRadius: appBorderRadius,
         ),
       ),
       obscureText: obsecureText,

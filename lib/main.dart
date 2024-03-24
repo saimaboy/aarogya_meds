@@ -1,6 +1,6 @@
-import 'package:aarogya_meds/screens/log_in_page.dart';
+import 'package:aarogya_meds/screens/patients/wrapper.dart';
+import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
-import 'package:aarogya_meds/screens/wrapper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +16,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SAD Venuk',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
+        scaffoldBackgroundColor: AppColors.bgcolor,
       ),
-      home: const LogInScreen(),
+      home: const Wrapper(), // Patients
+      // home:  const PharmacistsWrapper(), // Pharmacists
     );
   }
 }
