@@ -146,24 +146,24 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(
                 height: 40,
               ),
-              InkWell(
-                onTap: () {
-                  print("data");
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ReminderScreen(),
-                    ),
-                  );
-                },
-                child: Container(
-                  color: Colors.amber,
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
-                    child: Text("REMINDER"),
-                  ),
-                ),
-              ),
+              // InkWell(
+              //   onTap: () {
+              //     print("data");
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => const ReminderScreen(),
+              //       ),
+              //     );
+              //   },
+                // child: Container(
+                //   color: Colors.amber,
+                //   child: const Padding(
+                //     padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
+                //     child: Text("REMINDER"),
+                //   ),
+                // ),
+              //),
             ],
           ),
         ),
