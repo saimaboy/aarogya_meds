@@ -25,7 +25,7 @@ class _HomeMainState extends State<HomeMain> {
         title: "",
         isHome: true,
       ),
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: SingleChildScrollView(
         child: Stack(
           children: [

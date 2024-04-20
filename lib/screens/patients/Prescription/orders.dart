@@ -14,7 +14,7 @@ class PrescriptionOrder extends StatelessWidget {
         title: "My Prescription",
         isHome: true,
       ),
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: Padding(
         padding: appPagePadding,
         child: Column(

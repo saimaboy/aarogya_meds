@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
+import 'package:aarogya_meds/api_endpoint.dart';
 import 'package:aarogya_meds/models/pharmacy.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:aarogya_meds/widget/appbars/back_dots_appbar.dart';
@@ -12,32 +16,40 @@ class PharmacyList extends StatefulWidget {
 }
 
 class _PharmacyListState extends State<PharmacyList> {
-  final List<Pharmacy> pharmacy = [
-    Pharmacy(
-      id: 1,
-      pharmacyName: "Pharmacy Name 1",
-      location: "Colombo",
-      status: "Open",
-    ),
-    Pharmacy(
-      id: 2,
-      pharmacyName: "Pharmacy Name 2",
-      location: "Colombo",
-      status: "Close",
-    ),
-    Pharmacy(
-      id: 3,
-      pharmacyName: "Pharmacy Name 3",
-      location: "Homagama",
-      status: "Open",
-    ),
-    Pharmacy(
-      id: 4,
-      pharmacyName: "Pharmacy Name 4",
-      location: "Colombo",
-      status: "Close",
-    ),
-  ];
+
+  final storage = FlutterSecureStorage();
+  List<Pharmacy> pharmacies = [];
+
+
+  Future<String?> get token async {
+    return await storage.read(key: 'api_token');
+  }
+
+  Future<List<Pharmacy>> fetchPharmacyDetails(String token) async {
+  final url = ApiConfig.getEndpoint('pharmacies');
+  final response = await http.get(
+    Uri.parse(url),
+    headers: {'Authorization': 'Bearer $token'},
+  );
+
+  if (response.statusCode == 200) {
+    final List<dynamic> data = json.decode(response.body);
+    return data.map((item) => Pharmacy.fromJson(item)).toList();
+  } else {
+    throw Exception('Failed to pharmacies list');
+  }
+}
+  @override
+  void initState() {
+    super.initState();
+    fetchPharmacyDetails(token as String).then((data) {
+      setState(() {
+        pharmacies = data;
+      });
+    }).catchError((e) {
+      print('Error fetching profile details: $e');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +68,11 @@ class _PharmacyListState extends State<PharmacyList> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: pharmacy.length,
+                itemCount: pharmacies.length,
                 itemBuilder: (BuildContext context, index) {
+                  final pharmacy = pharmacies[index];
                   return PharmacyCard(
-                    pharmacy: pharmacy[index],
+                    pharmacy: pharmacies[index],
                   );
                 },
               ),
