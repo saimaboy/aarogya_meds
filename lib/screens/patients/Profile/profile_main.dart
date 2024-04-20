@@ -19,7 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: "Profile",
         isHome: true,
       ),
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(16.0),

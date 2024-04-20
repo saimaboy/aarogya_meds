@@ -14,4 +14,14 @@ class Pharmacy {
     this.mobile,
     this.ownerName,
   });
+
+  factory Pharmacy.fromJson(Map<String, dynamic> json) {
+    return Pharmacy(
+      id: json['id'],
+      pharmacyName: json['pharmacyName'],
+      location: json['location'],
+      status: json['status'],
+    );
+  }
 }
+

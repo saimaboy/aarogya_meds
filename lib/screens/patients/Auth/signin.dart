@@ -1,9 +1,17 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'dart:convert';
+import 'package:aarogya_meds/api_endpoint.dart';
 import 'package:aarogya_meds/screens/patients/Auth/signup.dart';
+import 'package:aarogya_meds/screens/patients/wrapper.dart';
+import 'package:aarogya_meds/utils/flutter_toast.dart';
 import 'package:aarogya_meds/widget/buttons/login_button.dart';
 import 'package:aarogya_meds/widget/textfields/input_text_field.dart';
 import 'package:aarogya_meds/widget/textfields/input_pw_field.dart';
 import 'package:aarogya_meds/utils/common.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
 
 class AppSignin extends StatefulWidget {
   const AppSignin({super.key});
@@ -17,6 +25,33 @@ class _AppSigninState extends State<AppSignin> {
   final TextEditingController _pwController = TextEditingController();
   bool checked = false;
   final _formKey = GlobalKey<FormState>();
+  final storage = FlutterSecureStorage();
+
+  Future<void> loginUser(BuildContext context) async {
+    final url = ApiConfig.getEndpoint('auth/login');
+    final response = await http.post(Uri.parse(url), body: {
+      'email': _emailController.text,
+      'password': _pwController.text,
+    });
+
+    if (response.statusCode == 201) {
+      final jsonToken = json.decode(response.body);
+      final token = jsonToken['access_token'];
+
+      await storage.write(key: 'api_token', value: token ?? '');
+      AppToastmsg.appToastMeassage("Login successful");
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Wrapper(),
+        ),
+      );
+    } else {
+      final jsonResponse = json.decode(response.body);
+      final errorMessage = jsonResponse['message'];
+      AppToastmsg.appToastMeassage(errorMessage);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +113,9 @@ class _AppSigninState extends State<AppSignin> {
                     AppPrimaryBtn(
                       btnText: 'Sign In',
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
+                        if (_formKey.currentState!.validate()) {
+                          loginUser(context);
+                        }
                       },
                     ),
                     const Padding(

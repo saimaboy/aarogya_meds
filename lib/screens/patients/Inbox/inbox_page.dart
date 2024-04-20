@@ -13,7 +13,7 @@ class InboxPage extends StatelessWidget {
         title: "Chats",
         isHome: true,
       ),
-      drawer: const CustomDrawer(),
+      drawer:  CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.only(top: 10),
         child: ListView.builder(
